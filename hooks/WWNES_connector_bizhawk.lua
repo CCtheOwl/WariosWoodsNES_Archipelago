@@ -756,7 +756,6 @@ MONITORS = {
         read_mem = function()	
 			return 0
 		end,
-        location_shield = 1,
         location_sent = 0
     },
 }
@@ -2254,7 +2253,7 @@ local message_interval = 0 --Same as above but for when they get received at the
 local prev_time = 0 --I don't know
 local current_time = 0
 local locked = false --Should Lua be waiting for Client? y/n
-local rom_hash = nil --What game we're playing (Diddy Kong Racing DS hopefully).
+local rom_hash = nil --What game we're playing.
 
 
 --I pretty much left these alone. They help the Client stay connected.
@@ -2566,7 +2565,7 @@ end
 
 --Disable the script to see this message and to turn off the localhost Lua loopback server.
 event.onexit(function ()
-    print("\n-- Script stopped. Please close BizHawk and re-launch Diddy Kong Racing DS Client to reconnect. --\n")
+    print("\n-- Script stopped. Please close BizHawk and re-launch the patchfile to reconnect. --\n")
     if server ~= nil then server:close() end
 end)
 
